@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:mm_app/device.dart';
-import 'package:mm_app/led.dart';
+
 
 class SelectBondedDevicePage extends StatefulWidget {
   /// If true, on page start there is performed discovery upon the bonded devices.
@@ -18,7 +18,6 @@ class SelectBondedDevicePage extends StatefulWidget {
 }
 
 enum _DeviceAvailability {
-  no,
   maybe,
   yes,
 }
@@ -69,13 +68,13 @@ class _SelectBondedDevicePage extends State<SelectBondedDevicePage> {
     });
   }
 
-  void _restartDiscovery() {
-    setState(() {
-      _isDiscovering = true;
-    });
+  // void _restartDiscovery() {
+  //   setState(() {
+  //     _isDiscovering = true;
+  //   });
 
-    _startDiscovery();
-  }
+  //   _startDiscovery();
+  // }
 
   void _startDiscovery() {
     _discoveryStreamSubscription =
